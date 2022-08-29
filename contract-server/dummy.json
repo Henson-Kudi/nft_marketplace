@@ -1,0 +1,70 @@
+// a312e842-dfbb-4c65-90e8-eb766aab3a73
+// e68493c7-d44c-44ea-af09-a601e9486b9a
+// 25275253-4195-44e3-bc6f-bbf92997a12f
+// 947967f5-b9ed-49ad-adda-5443e7713322
+// 031cccba-adb7-4125-a54a-862c5daa68f0
+
+{
+    "collection": {
+        "name": "Collection 1",
+        "description": "Description of collection 1",
+        "logo": "logo",
+        "cover": "cover",
+        "url_format": "url format",
+        "creator": "henson",
+        "owner": "henson",
+        "website": "website.com",
+        "discord": "discord.com",
+        "telegram": "tel.me",
+        "instagram": "insta.com",
+        "facebook": "fb.com",
+        "youtube": "youtube.com",
+        "category_id": "a312e842-dfbb-4c65-90e8-eb766aab3a730"
+    },
+    "listing": {
+        "block_hash": "dfgsdfvf",
+        "block_timestamp": "2022-08-18",
+        "transaction_hash": "34r234r4",
+        "transaction_index": "wewfw",
+        "token_decimal": "1",
+        "token_id": "1",
+        "log_index": "2",
+        "block_number": "3",
+        "function_name": "wfwedeew",
+        "function_descL": "wefwec",
+        "marketplace_address": "wefwefcwefw",
+        "nft_address": "2335345635",
+        "price": "1200000000000000000",
+        "price_decimal": "12",
+        "measurement_unit": "RTH",
+        "owner": "me",
+        "creator": "me",
+        "start_time": "2022-08-18",
+        "end_time": "2022-09-18",
+        "from_address": "134",
+        "to_address": "567",
+        "collection_id": "dfca2b3a-9ca1-43db-a63e-1f5a0f023ecb",
+        "status": "listed"
+    },
+    "offers": {
+        "block_hash": "wdfsd",
+        "block_timestamp": "2022-08-18",
+        "transaction_hash": "cssd",
+        "transaction_index": "sdsdfsd",
+        "token_decimal": "1",
+        "token_id": "2",
+        "log_index": "2",
+        "block_number": "2",
+        "function_name": "dxcsadc",
+        "function_desc": "dfwsdf",
+        "marketplace_address": "wdsdsdfc",
+        "nft_address": "2335345635",
+        "price": "12000000000000000000",
+        "price_decimal": "12",
+        "measurement_unit": "dsdv",
+        "owner": "you",
+        "offerer": "me",
+        "deadline": "2022-09-18",
+        "collection_id": "dfca2b3a-9ca1-43db-a63e-1f5a0f023ecb"
+    }
+}

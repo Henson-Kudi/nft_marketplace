@@ -1,0 +1,12 @@
+{
+    "4": {
+        "NftMarketplace": ["0xd9fc4C8745Bec3D7195599b336318A4272258c57"],
+        "NftToken": ["0x1f6C869c1978CF5267ADf9cEA9C81BeF9Ab4abDb"],
+        "name": "rinkeby"
+    },
+    "31337": {
+        "NftMarketplace": ["0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"],
+        "NftToken": ["0x5FbDB2315678afecb367f032d93F642f64180aa3"],
+        "name": "localhost"
+    }
+}

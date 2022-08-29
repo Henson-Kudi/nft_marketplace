@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HK Solutions Marketplace</title>
+    </head>
+    <body>
+        <h1>Hiii. Express static is working</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div style="padding: 10px">
+                <input type="file" name="image" id="image" accept="image/*" />
+            </div>
+
+            <div style="padding: 10px">
+                <input type="file" name="audio" id="audio" accept="audio/*" />
+            </div>
+
+            <div style="padding: 10px">
+                <input type="file" name="video" id="video" accept="video/*" />
+            </div>
+
+            <div style="padding: 10px">
+                <button type="submit">Create</button>
+            </div>
+        </form>
+
+        <script>
+            const form = document.getElementById("uploadForm")
+
+            const sendFile = async () => {
+                const image = document.getElementById("image").files[0]
+                const audio = document.getElementById("audio").files[0]
+                const video = document.getElementById("video").files[0]
+
+                const formData = new FormData()
+
+                formData.append("image", image)
+
+                audio && formData.append("audio", audio)
+
+                video && formData.append("video", video)
+
+                const res = await fetch("http://localhost:5000/api/uploads", {
+                    method: "POST",
+                    body: formData,
+                })
+
+                const data = await res.json()
+
+                console.log(data)
+
+                const jsonRes = await fetch("http://localhost:5000/api/uploads/json", {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+
+                console.log(await jsonRes.json())
+            }
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault()
+
+                sendFile()
+            })
+        </script>
+    </body>
+</html>

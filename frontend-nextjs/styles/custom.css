@@ -1,0 +1,84 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.header {
+    box-shadow: 1px 1px 2px lightgrey;
+}
+
+.header-container .nav-bar {
+    left: 0;
+}
+
+.header-container .open-nav {
+    display: none;
+}
+
+.header-container .close-nav {
+    display: block;
+}
+
+.search-bar-cont .search-box {
+    display: block;
+}
+.search-bar-cont .search-btn {
+    display: none;
+}
+
+.filter-options.show-filter,
+.select-hour .show-select-hr,
+.select-min .show-select-min,
+.select-hour .show-select-hr-end,
+.select-min .show-select-min-end {
+    top: 100%;
+    visibility: visible;
+    z-index: -1000;
+}
+
+.select-collection.show-collection {
+    top: 100%;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.show-custom-date.hide-custom {
+    height: max-content;
+}
+
+.show-modal.make-offer,
+.sell-modal.show-sell-modal {
+    visibility: visible;
+}
+
+.logo-banner-cont {
+    box-shadow: 2px 2px 5px lightgrey;
+}
+
+.logo-banner-cont.dark-banner {
+    box-shadow: 2px 2px 5px #04111d;
+}
+
+.collection-logo {
+    transform: translateY(-80%);
+}
+
+.share-cont .share-options-cont,
+.report-cont .report-options-cont,
+.select-deadline.show-deadline {
+    top: 100%;
+    visibility: visible;
+}
+
+.custom-loader {
+    z-index: 1000000000;
+}
