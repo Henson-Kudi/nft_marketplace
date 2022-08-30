@@ -68,6 +68,24 @@ app.get("/api/categories", async (req, res) => {
     }
 })
 
+app.get("/api/categories/:categoryId", async (req, res) => {
+    const { categoryId } = req.params
+
+    const qs = `SELECT * FROM collection_categories WHERE id = $1`
+
+    try {
+        const {
+            rows: [data],
+        } = await pool.query(qs, [categoryId])
+
+        return res.status(200).json(data)
+    } catch (err) {
+        console.log(err)
+
+        return res.status(500).json(err)
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`App listening on ${PORT}`)
 })

@@ -5,6 +5,7 @@ const nextConfig = {
     images: {
         domains: ["https://ipfs.io/"],
     },
+    staticPageGenerationTimeout: 100,
 }
 
 module.exports = nextConfig

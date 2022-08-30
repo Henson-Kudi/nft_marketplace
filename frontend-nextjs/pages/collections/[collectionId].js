@@ -11,28 +11,27 @@ import etherscanImg from "../../assets/images/etherscan.jpg"
 import CustomLoader from "../../components/CustomLoader"
 import NftBox from "../../components/NftBox"
 
-export default function Collection({ params }) {
+export default function Collection({ collection: collectionData }) {
     const shareOptionsRef = useRef(null)
     const reportRef = useRef(null)
     const filterOptionsRef = useRef(null)
 
-    const { collectionId } = params
+    const { collection_id: collectionId } = collectionData
     const { darkMode } = useContext(DarkModeContext)
 
-    const [collection, setCollection] = useState({})
+    const [collection, setCollection] = useState(collectionData)
     const [loadingVisible, setLoadingVisible] = useState("invisible")
 
     const getCollection = async () => {
         const collection = await handleGetRequest(`/collections/${collectionId}`)
-
         setCollection(collection)
     }
 
-    useEffect(() => {
-        getCollection()
+    // useEffect(() => {
+    //     getCollection()
 
-        return () => {}
-    }, [])
+    //     return () => {}
+    // }, [])
 
     useEffect(() => {
         document.addEventListener("mousedown", clickOutsideShare)
@@ -383,9 +382,13 @@ export default function Collection({ params }) {
     )
 }
 
-export const getStaticProps = ({ params }) => {
+export const getStaticProps = async ({ params }) => {
+    const { collectionId } = params
+
+    const collection = await handleGetRequest(`/collections/${collectionId}`)
+
     return {
-        props: { params },
+        props: { collection },
     }
 }
 

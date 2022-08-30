@@ -4,20 +4,17 @@ import CollectionBox from "../../components/CollectionBox"
 import { CollectionsContext } from "../../contexts/collectionsProvider"
 import { DarkModeContext } from "../../contexts/darkModeprovider"
 import { baseUrl as axios } from "../../utils/axios"
+import { handleGetRequest } from "../../utils/requests"
 
-export default function Category({ params }) {
-    const { categoryId } = params
-
+export default function Category({ category }) {
     const router = useRouter()
 
     const { darkMode } = useContext(DarkModeContext)
 
-    const { collections, categories } = useContext(CollectionsContext)
-
-    const category = categories?.filter((category) => category.id === categoryId)
+    const { collections } = useContext(CollectionsContext)
 
     const filteredCollections = collections?.filter(
-        (collection) => collection.category_id === categoryId
+        (collection) => collection.category_id === category.id
     )
 
     return (
@@ -39,9 +36,18 @@ export default function Category({ params }) {
     )
 }
 
-export const getStaticProps = ({ params }) => {
+export const getStaticProps = async ({ params }) => {
+    const { categoryId } = params
+
+    // const { collections, categories } = useContext(CollectionsContext)
+
+    const category = await handleGetRequest(`/categories/${categoryId}`)
+
+    // const filteredCollections = collections?.filter(
+    //     (collection) => collection.category_id === categoryId
+    // )
     return {
-        props: { params },
+        props: { category },
     }
 }
 
